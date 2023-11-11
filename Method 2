@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//Recursive Function
+int min_element(int arr[], int n)
+{
+  // if size = 0 means whole array has been traversed
+  if (n == 1)
+    return arr[0];
+  return min(arr[n-1], min_element(arr, n-1));
+}
+
+// driver code 
+int main()
+{
+   int arr[] = { 34, 5, 89, 90, 56};
+   int n = sizeof(arr)/ sizeof(arr[0]);
+   cout << min_element(arr, n);
+   return 0;
+} 
+
+// Time complexity: O(N)
+// Space complexity: O(1)
+// Auxilary space complexity : O(N) due to function call stack
