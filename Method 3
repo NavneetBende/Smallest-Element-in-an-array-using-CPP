@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//Recursive Function
+int minimum(int arr[], int i, int end)
+{
+   int min;
+
+   if(i == end-1)
+     return (arr[i] < arr[i + 1]) ? arr[i] : arr[i + 1];
+
+   min = minimum(arr, i + 1, end);
+
+   return (arr[i] < min) ? arr[i] : min;
+}
+
+// driver code 
+int main()
+{
+   int arr[] = { 34, 5, 89, 90, 56};
+   int end = sizeof(arr)/ sizeof(arr[0]) - 1;
+   cout << minimum(arr, 0, end);
+   return 0;
+} 
